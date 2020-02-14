@@ -10,6 +10,7 @@ Requirements:
   
 In order to run the project:
 1) Run run.sh, this will use the map.osm file to generate test.net.xml. Then the xml file will be used by
-   randomTrips.py to create the car routes. Change the -p flag to alter the number of cars generated
+   randomTrips.py to create the car routes. Change the -p flag to alter the number of cars generated. The
+   directory already has sample test.net.xml and route files, so this step isn't completely necessary
 2) Run GA-GD approach or GA approach to run the optimization
   
