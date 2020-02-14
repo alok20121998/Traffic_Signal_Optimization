@@ -1,22 +1,12 @@
-import requests
-import click
-import json
-import subprocess
 from joblib import Parallel, delayed
 import time
 import numpy as np
-import os
-import shutil
-import paramiko
 import time
 import random
-import csv
-import glob
 import os, sys
 tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
 sys.path.append(tools)
 import traci
-import multiprocessing
 import math
 
 class Simulator:
@@ -28,13 +18,6 @@ class Simulator:
         self.population = None
         self.saveState = None
         self.timings = np.ndarray((4, 954))
-
-    def openConnection(self, hostname, port, username, key):
-        sshClient = paramiko.SSHClient()
-        sshClient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        sshClient.load_system_host_keys()
-        sshClient.connect(hostname, port, username, pkey = key)
-        return sshClient
 
     def clear(self):
         if os.path.exists("save"):
